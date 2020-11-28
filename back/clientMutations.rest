@@ -1,0 +1,31 @@
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWNrLnVyaWJlQGNlcnRpZmljYXRpYy5vcmciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDQ4OTkwMzMsImV4cCI6MTYwNDkwMjYzM30.F8jBuDaas8bGfo06HUlCU27JuxW3SeGMeNqVtJPoNGY
+
+mutation{
+  saveUser(input: {
+    name: "Ethien"
+    lastName: "Salinas"
+    email: "ethien.salinas@gmail.com"
+    password: "qwerty"
+    isAdmin: true
+  }){
+    id
+    name
+    email
+  }
+}
+
+###
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWNrLnVyaWJlQGNlcnRpZmljYXRpYy5vcmciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDQ4OTkwMzMsImV4cCI6MTYwNDkwMjYzM30.F8jBuDaas8bGfo06HUlCU27JuxW3SeGMeNqVtJPoNGY
+
+mutation{
+  updateUser(id: 3, input: {password:"ytrewq"}){
+    id
+    name
+  }
+}

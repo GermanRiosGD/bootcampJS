@@ -1,0 +1,33 @@
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+
+query {
+ login(email: "ethien.salinas@gmail.com", password: "qwerty")
+}
+
+###
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV0aGllbi5zYWxpbmFzQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYwNjU3NTczMywiZXhwIjoxNjA2NTc5MzMzfQ.K-YYwdXThHrrhXYOkHkFbB3NGVopFchPx9ojAkagwAA
+
+query{
+  users{
+    name
+    email
+  }
+}
+
+###
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWNrLnVyaWJlQGNlcnRpZmljYXRpYy5vcmciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDQ4OTkwMzMsImV4cCI6MTYwNDkwMjYzM30.F8jBuDaas8bGfo06HUlCU27JuxW3SeGMeNqVtJPoNGY
+
+query{
+  user(id:3){
+    name
+    email
+  }
+}
