@@ -1,11 +1,8 @@
-import { hash } from "bcrypt";
-import { userInfo } from "os";
 import { Connection } from "typeorm";
 import { Author } from "../entity/Author";
 import { Post } from "../entity/Post";
 
 export class AuthorAPI {
-    private readonly SALT_ROUNDS = 9;
     private connection: Connection;
 
     constructor(connection: Connection) {

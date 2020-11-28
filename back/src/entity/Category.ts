@@ -4,7 +4,7 @@ import { Post } from "./Post";
 @Entity()
 export class Category {
   @PrimaryGeneratedColumn()
-  id: string;
+  id: number;
   @Column()
   label: string;
   @Column()
