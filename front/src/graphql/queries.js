@@ -5,3 +5,11 @@ export const LOGIN = gql`
     login(email: $email, password:$password)
     }
 `
+export const POSTS = gql`
+query GetPosts {
+    posts {
+      title
+      body
+    }
+  }
+`
