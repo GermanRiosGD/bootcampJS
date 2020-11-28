@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 import { AuthButton } from "./AuthButton";
-export const Navbar = () => {
+import { Navbar, Nav } from "react-bootstrap";
+export const NavbarComponent = () => {
     return (
-        <nav>
-            <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/users">Users</Link></li>
-                <li><Link to="/public">Public Page</Link></li>
-                <li><Link to="/protected">Protected Page</Link></li>
-                <li><AuthButton /></li>
-            </ul>
-        </nav>
+        <Navbar bg="light" expand="lg">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                    <Nav.Link><Link to='/'>Home</Link></Nav.Link>
+                    <Nav.Link><Link to="/about">About</Link></Nav.Link>
+                    <Nav.Link><Link to="/users">Users</Link></Nav.Link>
+                    <Nav.Link><Link to="/public">Public Page</Link></Nav.Link>
+                    <Nav.Link><Link to="/protected">Protected Page</Link></Nav.Link>
+                    <Nav.Link><AuthButton /></Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
     )
 }
