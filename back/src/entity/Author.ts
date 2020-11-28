@@ -4,11 +4,11 @@ import { Post } from "./Post";
 @Entity()
 export class Author {
   @PrimaryGeneratedColumn()
-  id: string;
-  @Column()
+  id: number;
+  @Column({nullable:true})
   name: string;
-  @Column()
-  lastname: string;
+  @Column({nullable:true})
+  lastName: string;
   @Column()
   email: string;
   @OneToMany(() => Post, post => post.author)
