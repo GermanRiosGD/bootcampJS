@@ -16,6 +16,9 @@ export class CategoryAPI {
             where: { id },
         });
     }
+    async saveCategory(category: ICategory): Promise<ICategory> {
+        return await this.connection.manager.save(Category, category);
+    }
     async updateCategory(category: ICategory): Promise<ICategory> {
         let currentCategory = await this.getCategory(category.id)
         Object.keys(category).forEach(key =>

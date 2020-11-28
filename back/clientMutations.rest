@@ -29,3 +29,75 @@ mutation{
     name
   }
 }
+### Author
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+
+mutation{
+  saveAuthor(input: {
+    name: "German"
+    lastName: "Rios"
+    email: "germanriosgd@gmail.com"
+  }){
+    id
+    name
+    lastName
+    email
+  }
+}
+### Category
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+
+mutation{
+  saveCategory(input: {
+    label: "Cocina"
+    desc: "mexicana"
+    slug: "www.germanrios.posts/?p=8679"
+  }){
+    id
+    label
+    desc
+    slug
+  }
+}
+### Category
+POST http://localhost:4000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+Content-Type: application/json
+
+mutation{
+  savePost(input: {
+    title: "Mi primer post"
+    body: "Hola este es mi primer post !!! veamos que sucede despues"
+    slug: "www.germanrios.posts/?p=8679"
+    date:  "28/11/2020"
+    coverImg: "imagen1"
+    cardImg: "imagen2"
+    author: {
+      name: "German"
+      lastName: "Rios"
+      email: "germanriosgd@gmail.com"
+  }
+    category: {
+    label: "Cocina"
+    desc: "mexicana"
+    slug: "www.germanrios.posts/?p=8679"
+  }
+  }){
+    title
+    body
+    slug
+    date
+    coverImg
+    cardImg
+    author{
+      id 
+    }
+    category{
+      id 
+    }
+  }
+}

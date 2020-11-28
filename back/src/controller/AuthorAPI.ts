@@ -16,6 +16,9 @@ export class AuthorAPI {
             where: { id },
         });
     }
+    async saveAuthor(author: IAuthor): Promise<IAuthor> {
+        return await this.connection.manager.save(Author, author);
+    }
     async updateAuthor(author: IAuthor): Promise<IAuthor> {
         let currentAuthor = await this.getAuthor(author.id)
         Object.keys(author).forEach(key =>
